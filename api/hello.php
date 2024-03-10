@@ -7,11 +7,6 @@ use PHPMailer\PHPMailer\Exception;
 require 'vendor/autoload.php';
 
 $env = parse_ini_file('.env');
-echo $env["MAILHOST"];
-echo $env["USERNAME"];
-echo $env["PASSWORD"];
-echo $env["SEND_FROM"];
-echo $env['SEND_FROM_NAME'];
 
 /**
  * The function uses the PHPMailer object to send an email 

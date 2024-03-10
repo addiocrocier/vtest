@@ -38,7 +38,7 @@ const formRef = ref(null)
 const message = ref('')
 
 const sendEmail = async () => {
-        const response = await axios.post('../../hello.php', {
+        const response = await axios.post('../../api/hello.php', {
           message: message.value
         })
     }

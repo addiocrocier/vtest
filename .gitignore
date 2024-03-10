@@ -31,3 +31,9 @@ coverage
 
 
 .vercel
+
+
+.env
+
+/api/.env
+api/.env

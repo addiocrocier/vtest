@@ -8,6 +8,8 @@ require 'vendor/autoload.php';
 
 $env = parse_ini_file('.env');
 
+echo $env["MAILHOST"];
+
 /**
  * The function uses the PHPMailer object to send an email 
  * to the address we specify.

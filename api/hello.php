@@ -6,7 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require 'vendor/autoload.php';
 
-$env = parse_ini_file('../.env');
+$env = parse_ini_file('./../.env');
 
 echo $env["MAILHOST"];
 

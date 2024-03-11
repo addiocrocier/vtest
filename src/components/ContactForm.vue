@@ -38,10 +38,8 @@ const formRef = ref(null)
 const message = ref('')
 
 const sendEmail = async () => {
-        const response = await axios.post('../../api/hello.php', {
-          message: message.value
-        })
-    }
+    await fetch('http://localhost:3000/mail', {method: "GET"})
+}
 </script>
 
 <style scoped>

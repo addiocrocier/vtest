@@ -38,7 +38,7 @@ const formRef = ref(null)
 const message = ref('')
 
 const sendEmail = async () => {
-    await fetch('/mail', {method: "GET"})
+    await fetch('https://vtest-self.vercel.app:3000/mail', {method: "GET"})
 }
 </script>
 

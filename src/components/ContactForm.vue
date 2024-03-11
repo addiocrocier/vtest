@@ -38,7 +38,7 @@ const formRef = ref(null)
 const message = ref('')
 
 const sendEmail = async () => {
-    await fetch('http://localhost:3000/mail', {method: "GET"})
+    await fetch('/mail', {method: "GET"})
 }
 </script>
 

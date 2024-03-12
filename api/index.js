@@ -3,7 +3,7 @@ const app = express();
 const postmark = require("postmark");
 require('dotenv').config()
 
-app.use(express.static('public'));
+
 
 app.get('/', (req, res) => {
     res.send(`Hi! Server is listening on port ${port}`)

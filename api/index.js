@@ -5,6 +5,10 @@ require('dotenv').config()
 
 app.use(express.static('public'));
 
+app.get('/', (req, res) => {
+    res.send(`Hi! Server is listening on port ${port}`)
+  });
+
 app.get("/mail", (req, res) => {
     console.log('hiiiiii')
     

@@ -41,26 +41,22 @@ const subject = ref('')
 const phone = ref('')
 
 const sendEmail = () => {
-
-    console.log('hhiiiiii')
-
-const data = {
-    From: "hello@mcbalabanian.io",
-    To: "hello@mcbalabanian.io",
-    Subject: subject.value,
-    HtmlBody: `
-        <h2>${name.val}</h2>
-        <h3>${email.value}</h3>
-        <p>${phone.value}</p>
-        <p>${message.value}</p>
-        
-    `,
-  };
-  console.log(data)
-  fetch('/api/contact', {
-    method: "POST",
-    body: JSON.stringify(data)
-  })
+    const data = {
+        From: "hello@mcbalabanian.io",
+        To: "hello@mcbalabanian.io",
+        Subject: subject.value,
+        HtmlBody: `
+            <h2>${name.val}</h2>
+            <h3>${email.value}</h3>
+            <p>${phone.value}</p>
+            <p>${message.value}</p>
+            
+        `,
+    };
+    fetch('/api/contact', {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
 }
 </script>
 

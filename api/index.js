@@ -3,8 +3,9 @@ const app = express();
 const postmark = require("postmark");
 require('dotenv').config()
 
+app.use(express.static('public'));
 
-app.get("/api", (req, res) => {
+app.get("/mail", (req, res) => {
     console.log('hiiiiii')
     
 // Send an email:

@@ -38,7 +38,7 @@ const formRef = ref(null)
 const message = ref('')
 
 const sendEmail = async () => {
-    await fetch('/api', {method: "GET"})
+    await fetch('/mail', {method: "GET"})
 }
 </script>
 

@@ -1,9 +1,10 @@
-import app from '../index';
-
+const express = require("express");
+const app = express();
 const postmark = require("postmark");
+require('dotenv').config()
 
 
-app.get("/mail", (req, res) => {
+app.get("/api", (req, res) => {
     console.log('hiiiiii')
     
 // Send an email:
@@ -15,5 +16,7 @@ app.get("/mail", (req, res) => {
         "TextBody": "Hello from Postmark!"
     });
 });
+
+app.listen(3000, () => console.log("Server ready on port 3000."));
 
 module.exports = app;

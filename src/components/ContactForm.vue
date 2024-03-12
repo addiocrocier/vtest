@@ -5,22 +5,22 @@
     <form ref="formRef" @submit.prevent="sendEmail">
       <div class="input-box">
         <div class="input-field">
-          <input type="text" placeholder="Full Name" name="name" required>
+          <input v-model="name"  type="text" placeholder="Full Name" name="name" required>
         </div>
         <div class="input-field">
-          <input type="email" placeholder="Email Address" name="email" required>
+          <input v-model="email" type="email" placeholder="Email Address" name="email" required>
         </div>
       </div>
       <div class="input-box">
         <div class="input-field">
-          <input type="tel" placeholder="Mobile Number" name="phone" required>
+          <input v-model="phone"  type="tel" placeholder="Mobile Number" name="phone" required>
         </div>
         <div class="input-field">
-          <input type="text" placeholder="Email Subject" name="subject" required>
+          <input v-model="subject" type="text" placeholder="Email Subject" name="subject" required>
         </div>
       </div>
       <div class="textarea-field">
-        <textarea id="message" cols="30" rows="10" placeholder="Your Message" name="message" v-model="message" required></textarea>
+        <textarea v-model="message" id="message" cols="30" rows="10" placeholder="Your Message" name="message" required></textarea>
       </div>
       <div class="btn-box btns">
         <button type="submit" class="btn">Submit</button>
@@ -33,12 +33,34 @@
 import { ref } from 'vue'
 import axios from 'axios';
 
-const formRef = ref(null)
 
 const message = ref('')
+const email = ref('')
+const name = ref('')
+const subject = ref('')
+const phone = ref('')
 
-const sendEmail = async () => {
-    await fetch('/mail', {method: "GET"})
+const sendEmail = () => {
+
+    console.log('hhiiiiii')
+
+const data = {
+    From: "hello@mcbalabanian.io",
+    To: "hello@mcbalabanian.io",
+    Subject: subject.value,
+    HtmlBody: `
+        <h2>${name.val}</h2>
+        <h3>${email.value}</h3>
+        <p>${phone.value}</p>
+        <p>${message.value}</p>
+        
+    `,
+  };
+  console.log(data)
+  fetch('/api/contact', {
+    method: "POST",
+    body: JSON.stringify(data)
+  })
 }
 </script>
 
